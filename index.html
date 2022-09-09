@@ -1,0 +1,38 @@
+<html> 
+<head>
+  <link rel="stylesheet" href="bluestyle.css">
+</head>
+<body> 
+	<div class="check-answer-container"> 
+		<input id="input-example" type="text" /> 
+    	<button id="button-example" type="button">Check Answer</button> 
+	</div> 
+	<script> 
+		window.onload = () => { 
+			 
+			// DOM elements we want to reference  
+			var buttonEl = document.getElementById('button-example'); 
+			var inputEl = document.getElementById('input-example'); 
+			 
+			// add button handler 
+			if (buttonEl) { 
+				buttonEl.onclick = checkValue; 
+			} 
+			 
+			// checkValue function that runs the comparison 
+			function checkValue(e) { 
+				var correctAnswer = "CORRECT"; 
+				var inputValue = inputEl && inputEl.value;//?why &&
+				if (inputValue === correctAnswer) { 
+					// do something its correct 
+          			alert("Input matches - " + correctAnswer); 
+				} else { 
+					// do something when not correct 
+          			alert("Input does not match - " + correctAnswer); 
+				} 
+			} 
+			 
+		}  
+	</script>  
+</body>  
+</html> 
